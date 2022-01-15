@@ -1,12 +1,15 @@
 from django.shortcuts import render
 
+from .models import *
+
 
 def home(request):
     return render(request, 'goods/home.html')
 
 
 def categories(request):
-    return render(request, 'goods/cats.html')
+    posts = All_goods.objects.all()
+    return render(request, 'goods/cats.html', {'posts': posts})
 
 
 def login(request):
@@ -19,3 +22,13 @@ def basket(request):
 
 def registration(request):
     return render(request, 'goods/registration.html')
+
+def mans(request):
+
+    return render(request, 'goods/mans.html')
+
+def womens(request):
+    return render(request, 'goods/womens.html')
+
+def child(request):
+    return render(request, 'goods/child.html')

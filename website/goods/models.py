@@ -26,3 +26,32 @@ class Comment(models.Model):
     class Meta:
         verbose_name = 'Комментарий'
         verbose_name_plural = 'Коментарии'
+
+
+class All_goods(models.Model):        # Таблица со всеми вущами
+    title = models.CharField(max_length=50)
+    category = models.CharField(max_length=10)
+    description = models.TextField()
+    price = models.IntegerField()
+    date = models.DateField(auto_now_add="True")
+    photo = models.ImageField(upload_to='img/')    # разобраться
+    author = models.CharField(max_length=50)  # из таблицы с логинами
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'Товар'
+        verbose_name_plural = 'Товары'
+
+
+# class Man_goods(models.Model):      # Таблица с вещами для мужчин
+#     pass
+#
+#
+# class Women_goods(models.Model):      # Таблица с вещами для женщин
+#     pass
+#
+#
+# class Child_goods(models.Model):      # Таблица с вещами для детей
+#     pass

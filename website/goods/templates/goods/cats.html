@@ -5,5 +5,22 @@ Categories
 {% endblock %}
 
 {% block content %}
-    <h3>categories page</h3>
+    <h3>Выберете интересующую Вас категорию</h3>
+<button>Мужская одежда</button>
+    <br>
+    <br>
+<button>Женская одежда</button>
+    <br>
+    <br>
+<button>Детская одежда</button>
+<h1>Все объявления:</h1>
+  <ul>
+            {% for p in posts %}
+            <li>
+                    <h2>{{p.title}}</h2>
+                    <p>{{p.description}}</p>
+                    <hr>
+            </li>
+            {% endfor %}
+    </ul>
 {% endblock %}
